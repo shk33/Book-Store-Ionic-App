@@ -13,24 +13,29 @@
   </ion-side-menu-content>
 
   <ion-side-menu side="left">
-    <ion-header-bar class="bar-stable">
-      <h1 class="title">Left</h1>
+    <ion-header-bar class="bar-assertive">
+      <h1 class="title">Menu</h1>
     </ion-header-bar>
+
     <ion-content>
       <ion-list>
-        <ion-item menu-close ng-click="login()">
-          Login
-        </ion-item>
-        <ion-item menu-close href="#/app/search">
-          Search
-        </ion-item>
         <ion-item menu-close href="#/app/browse">
-          Browse
+          Browse Books
         </ion-item>
-        <ion-item menu-close href="#/app/playlists">
-          Playlists
+        <ion-item menu-close href="#/app/cart">
+         My Cart
+        </ion-item>
+        <ion-item menu-close href="#/app/purchases">
+          My Purchases
+        </ion-item>
+        <ion-item menu-close ng-show="isAuthenticated" ng-click="logout()">
+          Logout
+        </ion-item>
+        <ion-item menu-close ng-hide="isAuthenticated" ng-click="loginFromMenu()">
+          Login
         </ion-item>
       </ion-list>
     </ion-content>
+    
   </ion-side-menu>
 </ion-side-menus>
