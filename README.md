@@ -1,5 +1,26 @@
 # Chapter 6 - Building a Bookstore App
 
+## Installing
+
+Go to server directory
+
+`cd server`
+
+Init the server
+
+`npm start`
+
+Open a new console and move to app folder
+
+`cd mobile-app`
+
+Restore the state
+
+`ionic state restore`
+
+You can check the app via `ionic serve` or building the app `ionic build`
+
+
 ## About this chapter
 
 So far, we have looked at all the key elements of Ionic. In this chapter, we will build a Bookstore application using that knowledge. The main purpose of this chapter is to consolidate your understanding of Ionic and, at the same time, get a sense of integrating an Ionic app with an existing RESTful service.
