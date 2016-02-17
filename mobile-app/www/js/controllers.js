@@ -272,6 +272,7 @@ function($rootScope, $ionicModal, AuthFactory, $location,
       Loader.toggleLoadingWithMessage(err.message);
     });
   });
+
   if (!AuthFactory.isLoggedIn()) {
     $rootScope.$broadcast('showLoginModal', $scope,
       function() {
@@ -279,11 +280,14 @@ function($rootScope, $ionicModal, AuthFactory, $location,
           $location.path('/app/browse');
         }, 200);
       }, function() {
-  // user is now logged in
-  $scope.$broadcast('getPurchases');
-  });
+        // user is now logged in
+        $scope.$broadcast('getPurchases');
+    });
+
     return;
   }
+
   $scope.$broadcast('getPurchases');
+  
   }
 ])
