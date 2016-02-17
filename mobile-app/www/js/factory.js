@@ -3,25 +3,32 @@ var base = 'http://localhost:3000';
 
 angular.module('BookStoreApp.factory', [])
 
-.factory('Loader', ['$ionicLoading', '$timeout',
-function($ionicLoading, $timeout) {
+.factory('Loader', ['$ionicLoading', '$timeout', function($ionicLoading, $timeout) {
+
   var LOADERAPI = {
+
     showLoading: function(text) {
       text = text || 'Loading...';
       $ionicLoading.show({
         template: text
       });
     },
+
     hideLoading: function() {
       $ionicLoading.hide();
     },
+
     toggleLoadingWithMessage: function(text, timeout) {
-      $rootScope.showLoading(text);
+      var self = this;
+
+      self.showLoading(text);
+
       $timeout(function() {
-        $rootScope.hideLoading();
+        self.hideLoading();
       }, timeout || 3000);
     }
   };
+
   return LOADERAPI;
 }])
 .factory('LSFactory', [function() {
