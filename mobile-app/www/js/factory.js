@@ -32,20 +32,26 @@ angular.module('BookStoreApp.factory', [])
   return LOADERAPI;
 }])
 .factory('LSFactory', [function() {
+
   var LSAPI = {
+
     clear: function() {
       return localStorage.clear();
     },
+
     get: function(key) {
       return JSON.parse(localStorage.getItem(key));
     },
+
     set: function(key, data) {
       return localStorage.setItem(key,
         JSON.stringify(data));
     },
+
     delete: function(key) {
       return localStorage.removeItem(key);
     },
+
     getAll: function() {
       var books = [];
       var items = Object.keys(localStorage);
@@ -57,7 +63,9 @@ angular.module('BookStoreApp.factory', [])
       return books;
     }
   };
+
   return LSAPI;
+  
 }])
 .factory('AuthFactory', ['LSFactory', function(LSFactory) {
   var userKey = 'user';
