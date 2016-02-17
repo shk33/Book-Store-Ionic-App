@@ -1,5 +1,6 @@
 // var base = 'https://ionic-book-store.herokuapp.com';
 var base = 'http://localhost:3000';
+var base = 'http://192.168.0.8:3000';
 
 angular.module('BookStoreApp.factory', [])
 

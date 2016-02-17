@@ -119,7 +119,8 @@ function($rootScope, $ionicModal, AuthFactory, $location,
         Loader.hideLoading();
       }).error(function(err, statusCode) {
         Loader.hideLoading();
-        Loader.toggleLoadingWithMessage(err.message);
+        // Loader.toggleLoadingWithMessage(err.message);
+        Loader.toggleLoadingWithMessage('Something went wrong. Try Later');
       });
     }
 
